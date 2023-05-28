@@ -5,21 +5,26 @@
 #include <iostream>
 
 class Book {
+public:
+    enum Status{ Available, Borrowed, Reserved };
+
 private:
     int bookId;
     std::string bookName;
     std::string author;
-    std::string bookStatus;
-
+    Status bookStatus;
 public:
     Book(int id = -1, std::string bookName = "", 
-        std::string author = "", std::string bookStatus = "");
+        std::string author = "", Status bookStatus = Available);
     int getBookId();
-    bool setBookId(int bookId);
+    void setBookId(int bookId);
+    std::string getBookName();
+    void setBookName(std::string bookName);
     std::string getAuthor();
-    bool setAuthor(std::string author);
-    std::string getBookStatus();
-    bool setBookStatus(std::string bookStatus);
+    void setAuthor(std::string author);
+    Status getBookStatus();
+    void setBookStatus(Status status);
+    bool isAvailable();
 };
 
 #endif

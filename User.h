@@ -14,13 +14,13 @@ private:
 
 public:
     User(int userId = -1, std::string userName = "",
-            std::list<Book>* booksBorrowed = nullptr);
+            const std::list<Book>& booksBorrowed = {});
     int getUserId();
-    bool setUserId(int userId);
+    void setUserId(int userId);
     std::string getUserName();
-    bool setUserName(std::string userName);
+    void setUserName(std::string userName);
     std::list<Book> getBooksBorrowed();
-    bool setBooksBorrowed(Book aBook);
+    void addBooksBorrowed(Book aBook);
 };
 
 #endif
