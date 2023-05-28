@@ -13,7 +13,8 @@ private:
     std::list<Book> booksBorrowed;
 
 public:
-
+    User(int userId = -1, std::string userName = "",
+            std::list<Book>* booksBorrowed = nullptr);
     int getUserId();
     bool setUserId(int userId);
     std::string getUserName();
